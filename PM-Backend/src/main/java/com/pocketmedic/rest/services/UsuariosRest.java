@@ -44,9 +44,8 @@ public class UsuariosRest {
                     .entity(gson.toJson("El email ya esta registrado"))
                     .build();
         }
-
     }
-
+    
     @PUT
     @Path("{id}")
     public void edit(@PathParam("id") Integer id, Usuarios usuario) {
@@ -69,7 +68,7 @@ public class UsuariosRest {
     public Usuarios findById(@PathParam("id") Integer id) {
         return ejbUsuariosFacade.find(id);
     }
-
+    
     @GET
     @Path("nombre/{nombre}")
     public List<Usuarios> findByNombre(@PathParam("nombre") String nombre) {
